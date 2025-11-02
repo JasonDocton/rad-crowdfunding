@@ -9,7 +9,7 @@
 
 	// Project name (appears in Cloudflare dashboard)
 	// Change this to your project name
-	"name": "rad-crowdfunding",
+	"name": "rad-crowdfunding-demo",
 
 	// Cloudflare compatibility settings
 	// Update compatibility_date to current date when updating wrangler
