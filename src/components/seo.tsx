@@ -74,7 +74,8 @@ export function createSeo(options: SEOOptions = {}) {
 		],
 
 		links: [
-			// Favicons - Safari prefers PNG icons listed first
+			// Favicons - SVG first for modern browsers (especially Safari)
+			{ rel: 'icon', type: 'image/svg+xml', href: '/favicon/favicon.svg' },
 			{
 				rel: 'icon',
 				type: 'image/png',
