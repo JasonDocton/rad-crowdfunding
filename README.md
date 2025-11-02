@@ -20,7 +20,6 @@
 </div>
 
 ## Features
----
 - 👌&nbsp; **0 Fundraising Platform Fees**
 -- Make the most of your donations by ditching fundraising platforms. Only payment processor fees apply.
 
@@ -44,11 +43,9 @@
 
 
 ## Intro
----
 It's been a few years since I touched code, but I needed to create a quick and dirty fundraising platform for a friend that was diagnosed with cancer. The original project served its purpose while reigniting my passion for coding, and this project is the result. My goal here was to recreate the original project with all of the latest tools and tech that looked exciting, and also make it open source so others can use it as a starting point for their own projects. This project contains a lot of design, privacy, and security choices based on the video game Rust, where I originally met my friend through.
 
 ## Before You Launch
----
 
 ### Convex and your envs
 
@@ -129,7 +126,6 @@ Generate your mainnet Bitcoin key using a **hardware wallet** or **air-gapped ma
 
 
 ## Configuration
----
 
 ### Environment Variables
 
@@ -163,7 +159,6 @@ Setup the following envs in your Convex Dashboard:
 
 
 ## Acknowledgements
----
 Huge thanks to:
 
 - [Theo Browne](https://github.com/t3dotgg) for introducing me to the coding world and giving me a such a strong foundation of knowledge to build from.
@@ -173,7 +168,6 @@ Huge thanks to:
 - [Tanner Linsley](https://github.com/tannerlinsley) for his relentless dedication to TanStack and improving the React ecosystem.
 
 ## Yapping About Code
----
 
 I went into this project really excited to try out the latest tools, like TanStack Start and Convex. Although I wasn't familiar with any of the tools in this stack (apart from my beloved Tailwind), I've always admired Tanner's work and knew immediately that I had to use TanStack Start when it hit RC. In the spirit of learning new things, I decided to use ZED as my IDE, Biome as my linter/formatter, and Convex as my backend/database solution. This also felt like a great opportunity to explore coding alongside AI, which now feels like a fundemental part of my workflow. As all good refactoring projects go, it took me a lot longer than expected to finish, but I absolutely loved the entire process and feel like I've learned a great deal along the way.
 
@@ -199,7 +193,6 @@ I know I've got to try Cursor, especially after the multi-agent interface releas
 
 
 ## Support
----
 
 - **Issues**: [GitHub Issues](https://github.com/username/rad-crowdfunding/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/username/rad-crowdfunding/discussions)
