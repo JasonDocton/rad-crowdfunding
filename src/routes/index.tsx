@@ -42,7 +42,7 @@ function Home() {
 					draggable={false}
 					src="/smiley.webp"
 				/>
-				<h1 className="text-2xl text-white">Rad Crowdfunding</h1>
+				<h1 className="mt-2 text-2xl text-white">Rad Crowdfunding</h1>
 				<p>Help Smiley Get Well By Reaching The Next Donation Goal!</p>
 			</section>
 

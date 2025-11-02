@@ -50,7 +50,7 @@ function GoalTracker({ initialTotal }: GoalTrackerProps) {
 			</meter>
 			<span
 				aria-hidden="true"
-				className="-translate-y-1/2 absolute top-1/2 right-0 pr-2 text-sm leading-tight"
+				className="-translate-y-1/2 absolute top-1/2 right-0 pr-2 font-bold text-shadow-2xs leading-tight"
 			>
 				$
 				{total.toLocaleString('en-US', {
