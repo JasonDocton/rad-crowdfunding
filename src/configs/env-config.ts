@@ -195,7 +195,7 @@ export function getRuntimeEnv(): Partial<Env> {
 
 	// Frontend SSR context: Client vars + optional server vars from .env.local
 	return {
-		VITE_CONVEX_URL: process.env.VITE_CONVEX_URL,
+		VITE_CONVEX_URL: import.meta.env.VITE_CONVEX_URL,
 		NODE_ENV: process.env.NODE_ENV as
 			| 'development'
 			| 'production'
