@@ -241,7 +241,7 @@ function DonateBitcoinModal({
 					wasAlreadyPaidOnMount.current = true
 					hasCheckedInitialState.current = true
 				}
-				setStatus('paid')
+				setStatus((prev) => (prev === 'paid' ? prev : 'paid'))
 				return
 			}
 			// No donation found - mark that we've checked initial state
@@ -254,7 +254,7 @@ function DonateBitcoinModal({
 		// SECOND: Check pending_bitcoin_payments (temporary tracking)
 		// Wait for query to load (pendingPayment will be undefined while loading)
 		if (pendingPayment === undefined) {
-			setStatus('loading')
+			setStatus((prev) => (prev === 'loading' ? prev : 'loading'))
 			return
 		}
 
@@ -265,9 +265,9 @@ function DonateBitcoinModal({
 				// Payment was already confirmed when modal opened
 				// Mark this so we don't redirect to success page again
 				wasAlreadyPaidOnMount.current = true
-				setStatus('paid')
+				setStatus((prev) => (prev === 'paid' ? prev : 'paid'))
 			} else {
-				setStatus('pending')
+				setStatus((prev) => (prev === 'pending' ? prev : 'pending'))
 				// Note: Confirmation counts will be fetched by polling
 				// We don't store them in the database to avoid stale data
 			}
@@ -457,6 +457,7 @@ function DonateBitcoinModal({
 	})
 
 	// Payment polling with exponential backoff
+	// biome-ignore lint/correctness/useExhaustiveDependencies: onPollPayment is useEffectEvent, stable reference
 	useEffect(() => {
 		// Poll while waiting for payment OR waiting for confirmations
 		// Stop polling only when fully paid or expired without payment
@@ -495,14 +496,7 @@ function DonateBitcoinModal({
 			}
 			clearTimeout(backoffTimer)
 		}
-	}, [
-		isOpen,
-		status,
-		paymentData,
-		pollingDelay,
-		isExpiredWithoutPayment,
-		onPollPayment,
-	])
+	}, [isOpen, status, paymentData, pollingDelay, isExpiredWithoutPayment])
 
 	// Shared state reset logic for both close and regenerate actions
 	const resetModalState = () => {

@@ -26,6 +26,7 @@ yarn-error.log*
 *.tsbuildinfo
 
 # ai - ignore personal workflow, keep shared docs
+.claude/
 .claude/scripts/
 .claude/specs/archive/
 .claude/QUICK_START.md
