@@ -34,7 +34,7 @@ export const Route = createFileRoute('/')({
 function Home() {
 	const { donors, total } = Route.useLoaderData()
 	return (
-		<main className="flex max-h-[calc(100svh-7rem)] flex-col space-y-4 overflow-hidden">
+		<main className="flex max-h-[calc(100svh-5rem)] flex-col space-y-4 overflow-hidden">
 			<section className="shrink-0">
 				<img
 					alt="A group of characters representing our fundraising goal"

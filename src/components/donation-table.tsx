@@ -27,7 +27,7 @@ function DonationTable({ initialDonations = [] }: DonationTableProps) {
 	}
 
 	return (
-		<div className="no-scrollbar max-h-[32svh] overflow-y-auto border-2 border-secondary p-2">
+		<div className="no-scrollbar max-h-[40svh] overflow-y-auto border-2 border-secondary p-2">
 			<table className="w-full">
 				<caption className="sr-only">Recent donations to this campaign</caption>
 				<thead>

@@ -15,7 +15,6 @@ import { Button } from '@/components/button.tsx'
 import { DefaultCatchBoundary } from '@/components/default-catch-boundary.tsx'
 import { Footer } from '@/components/footer.tsx'
 import { createSeo } from '@/components/seo.tsx'
-// biome-ignore lint/correctness/useImportExtensions: <Flags because of the ?url TankStack requires.>
 import appCss from '@/styles/global.css?url'
 
 export const Route = createRootRouteWithContext<{
