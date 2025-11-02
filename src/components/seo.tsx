@@ -74,8 +74,7 @@ export function createSeo(options: SEOOptions = {}) {
 		],
 
 		links: [
-			// Favicons
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+			// Favicons - Safari prefers PNG icons listed first
 			{
 				rel: 'icon',
 				type: 'image/png',
@@ -88,6 +87,7 @@ export function createSeo(options: SEOOptions = {}) {
 				sizes: '192x192',
 				href: '/favicon/android-icon-192x192.png',
 			},
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
 			{
 				rel: 'apple-touch-icon',
 				sizes: '180x180',
