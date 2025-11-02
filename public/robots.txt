@@ -1,0 +1,13 @@
+# Robots.txt for rad-crowdfunding
+# This tells search engines which pages to crawl and where to find the sitemap
+
+# Allow all bots to crawl all public pages
+User-agent: *
+Allow: /
+
+# Don't waste crawl budget on success pages with dynamic payment IDs
+# (These also have <meta name="robots" content="noindex, nofollow"> as backup)
+Disallow: /success
+
+# Sitemap location (helps search engines discover all pages efficiently)
+Sitemap: https://radcrowdfunding/sitemap.xml

@@ -1,0 +1,13 @@
+{
+	// Enables Biome as the default formatter for this project
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+
+	// Allows Biome to format and fix code on save
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit"
+	},
+
+	// Tailwind CSS IntelliSense settings
+	"tailwindCSS.classFunctions": ["cva", "cx"]
+}

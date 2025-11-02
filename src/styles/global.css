@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+	--color-*: initial;
+	--color-primary: #cd412b;
+	--color-secondary: #e4dad1;
+	--color-accent: #b83a27;
+	--color-background: #1b1b1b;
+	--color-tertiary: #2a2928;
+	--color-quaternary: #4c4946;
+	--color-white: #fff;
+}
+
+/* Prevent scrollbar gutter from showing when there's no overflow */
+html {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* Hide scrollbar track on WebKit browsers (Safari, Chrome) when not scrolling */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	width: 0;
+	background: transparent;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Remove all default focus outlines and validation styling - we use custom focus rings */
+* {
+	outline-color: transparent !important;
+}
+
+input,
+button,
+a {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+@layer utilities {
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.no-scrollbar {
+		overflow-x: hidden;
+		-ms-overflow-x: hidden;
+		scrollbar-width: none;
+	}
+
+	/* Base styles for all focus-ring variants */
+	.focus-ring,
+	.focus-ring-parent,
+	.focus-ring-within,
+	.focus-ring-secondary {
+		outline: none !important;
+		outline-offset: 2px !important;
+	}
+
+	/* Focus ring - visible for keyboard users, hidden for mouse users */
+	.focus-ring:focus-visible {
+		outline: 2px solid var(--color-primary) !important;
+	}
+
+	/* Focus ring for parent elements using has() - for radio/checkbox labels */
+	.focus-ring-parent:has(:focus-visible) {
+		outline: 2px solid var(--color-primary) !important;
+	}
+
+	/* Focus ring for wrapper elements using focus-within - for custom inputs */
+	.focus-ring-within:focus-within {
+		outline: 2px solid var(--color-primary) !important;
+	}
+
+	/* Secondary focus ring for elements with primary background */
+	.focus-ring-secondary:focus-visible {
+		outline: 2px solid var(--color-secondary) !important;
+	}
+
+	/* Fallback for browsers without :focus-visible support */
+	@supports not selector(:focus-visible) {
+		.focus-ring:focus {
+			outline: 2px solid var(--color-primary) !important;
+		}
+		.focus-ring-parent:has(:focus) {
+			outline: 2px solid var(--color-primary) !important;
+		}
+		.focus-ring-secondary:focus {
+			outline: 2px solid var(--color-secondary) !important;
+		}
+	}
+}
+
+/* Styling a meter element is a nightmare in tailwind. */
+::-webkit-meter-bar {
+	background: transparent;
+	height: 3.5rem;
+}
+::-moz-meter-bar {
+	background: transparent;
+}
+::-webkit-meter-optimum-value {
+	background: #90B047;
+}
+::-moz-meter-optimum-value {
+	background: #90B047;
+}
+
+/* Removes the number selector from input[type='number'] */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type='number'] {
+	appearance: textfield;
+	-moz-appearance: textfield;
+}

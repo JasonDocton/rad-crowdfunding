@@ -1,0 +1,28 @@
+{
+	// Cloudflare Workers configuration
+	// This file is ONLY needed if deploying to Cloudflare Workers
+	// Safe to delete if using a different hosting platform (Netlify, etc.)
+	//
+	// Documentation: https://developers.cloudflare.com/workers/wrangler/configuration/
+
+	"$schema": "node_modules/wrangler/config-schema.json",
+
+	// Project name (appears in Cloudflare dashboard)
+	// Change this to your project name
+	"name": "rad-crowdfunding",
+
+	// Cloudflare compatibility settings
+	// Update compatibility_date to current date when updating wrangler
+	"compatibility_date": "2025-01-26",
+	"compatibility_flags": ["nodejs_compat"],
+
+	// TanStack Start server entry point
+	// This tells Cloudflare Workers where to find the SSR server
+	// Do not change this unless you know what you're doing
+	"main": "@tanstack/react-start/server-entry"
+
+	// Environment variables:
+	// For local development: Use .env.local
+	// For production: Set in Cloudflare dashboard (Settings → Variables)
+	// Example: VITE_CONVEX_URL=https://your-prod.convex.cloud
+}

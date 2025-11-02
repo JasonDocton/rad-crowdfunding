@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage - most important page, updated weekly -->
+  <url>
+    <loc>https://radcrowdfunding/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Donate page - second most important, changes rarely -->
+  <url>
+    <loc>https://radcrowdfunding/donate</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Privacy policy - legal page, updated when policy changes -->
+  <url>
+    <loc>https://radcrowdfunding/privacy</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms of service - legal page, updated when terms change -->
+  <url>
+    <loc>https://radcrowdfunding/terms</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Note: /success is excluded because it has noindex and is in robots.txt Disallow -->
+</urlset>
