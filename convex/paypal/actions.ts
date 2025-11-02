@@ -83,8 +83,6 @@ export const createOrder = action({
 				throw new Error('PayPal order creation failed - no order ID returned')
 			}
 
-			// Workflow will be started by webhook handler when payment completes
-			// This prevents wasting resources on abandoned checkout sessions
 			return {
 				orderId: result.id,
 				approvalUrl: approvalUrl || null,

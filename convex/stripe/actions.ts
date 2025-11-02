@@ -62,9 +62,6 @@ export const createCheckoutSession = action({
 					amount: amount.toString(),
 				},
 			})
-
-			// Workflow will be started by webhook handler when payment completes
-			// This prevents wasting resources on abandoned checkout sessions
 			return { url: session.url, sessionId: session.id }
 		} catch (error) {
 			logger.error('Stripe checkout error:', error)

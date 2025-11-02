@@ -73,9 +73,6 @@ export const handleStripeWebhook = action({
 				payment_method: 'stripe',
 				source: 'webhook',
 			})
-
-			// No workflow needed - success page uses reactive queries directly
-			// Stripe session_id is used as-is (no mapping required like PayPal)
 		}
 
 		return { received: true }

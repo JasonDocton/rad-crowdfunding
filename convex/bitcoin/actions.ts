@@ -55,7 +55,7 @@ const rateLimiter = new RateLimiter(components.rateLimiter, {
 })
 
 // SECURITY: BITCOIN_MASTER_KEY compromise exposes all derived addresses
-// Production deployments should use HSM or dedicated key management service (see SECURITY.md)
+// Production deployments should use HSM or dedicated key management service.
 
 // Generate Bitcoin address with rate limiting and idempotency
 // Uses BIP84 (m/84'/0'/0'/0/{index}) for native SegWit addresses
