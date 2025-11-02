@@ -27,13 +27,6 @@ export const clientEnvSchema = z.object({
 	...sharedEnvSchema.shape,
 })
 
-// Server environment can use either VITE_CONVEX_URL or CONVEX_URL
-// CONVEX_URL allows runtime environment variable override (e.g., in Cloudflare dashboard)
-// Falls back to VITE_CONVEX_URL if CONVEX_URL is not set
-export const serverConvexUrlSchema = z.object({
-	CONVEX_URL: z.optional(z.string().check(z.url())),
-})
-
 // Server-only environment variables (secrets, server config)
 export const serverEnvSchema = z.object({
 	...sharedEnvSchema.shape,
@@ -165,8 +158,7 @@ export function getRuntimeEnv(): Partial<Env> {
 	// Convex context: Read all vars from Convex's process.env
 	if (isConvex) {
 		return {
-			VITE_CONVEX_URL:
-				process.env.CONVEX_URL || process.env.VITE_CONVEX_URL,
+			VITE_CONVEX_URL: process.env.VITE_CONVEX_URL,
 			CONVEX_ENV: process.env.CONVEX_ENV as
 				| 'development'
 				| 'production'
@@ -204,14 +196,10 @@ export function getRuntimeEnv(): Partial<Env> {
 	// Frontend SSR context: Client vars + optional server vars from .env.local
 	// Detect if running in Vite SSR (has import.meta.env) vs plain Node script
 	const isViteSSR = typeof import.meta.env !== 'undefined'
-
-	// For CONVEX_URL: Prioritize runtime env var (CONVEX_URL) over build-time (VITE_CONVEX_URL)
-	// This allows Cloudflare/Vercel/Netlify dashboard env vars to override .env.local
-	const convexUrl = process.env.CONVEX_URL ||
-		(isViteSSR ? import.meta.env.VITE_CONVEX_URL : process.env.VITE_CONVEX_URL)
-
 	return {
-		VITE_CONVEX_URL: convexUrl,
+		VITE_CONVEX_URL: isViteSSR
+			? import.meta.env.VITE_CONVEX_URL
+			: process.env.VITE_CONVEX_URL,
 		NODE_ENV: process.env.NODE_ENV as
 			| 'development'
 			| 'production'

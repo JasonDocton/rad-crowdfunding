@@ -10,7 +10,7 @@
 		"dev:convex": "pnpx convex dev",
 		"build": "vite build && tsc --noEmit",
 		"build:dev": "NODE_ENV=production vite build",
-		"deploy": "pnpm build && wrangler deploy",
+		"deploy": "pnpm build && pnpm wrangler deploy",
 		"cf-typegen": "wrangler types",
 		"preview": "concurrently \"npm:start\" \"npm:dev:convex\" --names \"server,convex\" --prefix-colors \"cyan,magenta\"",
 		"start": "vite start",
