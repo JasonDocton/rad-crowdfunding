@@ -21,8 +21,20 @@
 	// Do not change this unless you know what you're doing
 	"main": "@tanstack/react-start/server-entry"
 
-	// Environment variables:
-	// For local development: Use .env.local
-	// For production: Set in Cloudflare dashboard (Settings → Variables)
-	// Example: VITE_CONVEX_URL=https://your-prod.convex.cloud
+	// Environment variables for Cloudflare Workers:
+	// ================================================
+	//
+	// REQUIRED in Cloudflare Dashboard (Settings → Variables → Environment Variables):
+	//   CONVEX_URL=https://your-production.convex.cloud
+	//
+	// Why CONVEX_URL instead of VITE_CONVEX_URL?
+	// - VITE_* variables are bundled at build time from .env.local
+	// - CONVEX_URL is read at runtime from Cloudflare's environment
+	// - This allows you to use different Convex deployments per environment
+	//   without rebuilding your application
+	//
+	// Local development (.env.local):
+	//   VITE_CONVEX_URL=https://your-development.convex.cloud
+	//
+	// The app will use CONVEX_URL if available, otherwise falls back to VITE_CONVEX_URL
 }
