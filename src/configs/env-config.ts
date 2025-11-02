@@ -194,8 +194,12 @@ export function getRuntimeEnv(): Partial<Env> {
 	}
 
 	// Frontend SSR context: Client vars + optional server vars from .env.local
+	// Detect if running in Vite SSR (has import.meta.env) vs plain Node script
+	const isViteSSR = typeof import.meta.env !== 'undefined'
 	return {
-		VITE_CONVEX_URL: import.meta.env.VITE_CONVEX_URL,
+		VITE_CONVEX_URL: isViteSSR
+			? import.meta.env.VITE_CONVEX_URL
+			: process.env.VITE_CONVEX_URL,
 		NODE_ENV: process.env.NODE_ENV as
 			| 'development'
 			| 'production'
