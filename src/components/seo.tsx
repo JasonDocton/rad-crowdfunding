@@ -74,26 +74,29 @@ export function createSeo(options: SEOOptions = {}) {
 		],
 
 		links: [
-			// Favicons - SVG first for modern browsers (especially Safari)
-			{ rel: 'icon', type: 'image/svg+xml', href: '/favicon/favicon.svg' },
+			// Favicons - Apple touch icon first for Safari on macOS/iOS
+			{
+				rel: 'apple-touch-icon',
+				sizes: '180x180',
+				href: '/favicon/apple-touch-icon.png',
+			},
+			// SVG for modern browsers
+			{ rel: 'icon', href: '/favicon/favicon.svg', type: 'image/svg+xml' },
+			// PNG fallbacks
+			{
+				rel: 'icon',
+				type: 'image/png',
+				sizes: '32x32',
+				href: '/favicon/favicon-16x16.png',
+			},
 			{
 				rel: 'icon',
 				type: 'image/png',
 				sizes: '16x16',
 				href: '/favicon/favicon-16x16.png',
 			},
-			{
-				rel: 'icon',
-				type: 'image/png',
-				sizes: '192x192',
-				href: '/favicon/android-icon-192x192.png',
-			},
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
-			{
-				rel: 'apple-touch-icon',
-				sizes: '180x180',
-				href: '/favicon/apple-touch-icon.png',
-			},
+			// ICO fallback for legacy browsers
+			{ rel: 'shortcut icon', href: '/favicon/favicon.ico' },
 			// Canonical URL
 			...(includeCanonical ? [{ rel: 'canonical', href: url }] : []),
 		],
