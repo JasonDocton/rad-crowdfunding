@@ -191,11 +191,10 @@ I know I've got to try Cursor, especially after the multi-agent interface releas
 
 **Tools I Missed Using** - TRPC, T3.env. Although I can see the use case for TRPC with Convex, I think it would have been a bit redundant at this scale. Convex provides your schema, generates the API, handles the hooks, and does so entirely with Typescript. For the most part, it does, by default, what you'd seek to create with TRPC. That doesn't mean there isn't room for adding additional layers of safety or validation through TRPC and Zod, but agaiin, a bit redundant. Decided to create my own proxy based unified env instead of using T3.env was.. a choice. I had fun with it, but wouldn't recommend using it over T3.env for your project.
 
-
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/username/rad-crowdfunding/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/username/rad-crowdfunding/discussions)
+- **Issues**: [GitHub Issues](https://github.com/JasonDocton/rad-crowdfunding/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/JasonDocton/rad-crowdfunding/discussions)
 - **Discord**: jasondocton
 
 - **[Consider Sponsoring YouAreRAD](https://github.com/sponsors/youarerad)**: Just $30 helps our non-profit cover the cost of mental health care for someone in need.
