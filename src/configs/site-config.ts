@@ -3,7 +3,7 @@
 
 const siteConfig = {
 	// Basic Information
-	siteUrl: 'https://radcrowdfunding',
+	siteUrl: 'https://rad-crowdfunding-demo.jason-be2.workers.dev',
 	siteTitle: 'Rad Crowdfunding',
 	siteDescription:
 		'Help Smiley reach the next donation goal! Support our crowdfunding campaign and make a difference today.',
